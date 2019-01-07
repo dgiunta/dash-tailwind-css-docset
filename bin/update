@@ -1,0 +1,13 @@
+#!/bin/bash
+
+rm -rf tailwindcss.com
+rm -rf tailwindcss.docset
+
+wget -k -r -p -np -E https://tailwindcss.com
+
+cp ./dashing.json tailwindcss.com
+
+cd tailwindcss.com
+dashing build
+
+mv tailwindcss.docset ../
